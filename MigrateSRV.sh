@@ -18,25 +18,25 @@ read sqloldpass
 # Website Data Backup
 if [ ! -f /tmp/12allwebsites.tar.xz ]; then
         tar --xz -cvpf /tmp/12allwebsites.tar.xz /var/www/
-        sshpass -p $srvnewpass scp -P 22 /tmp/12allwebsites.tar.xz root@188.166.54.105:/home/backupm/
+        sshpass -p $srvnewpass scp -P 22 /tmp/12allwebsites.tar.xz root@1.1.1.1:/home/backupm/
 #else
-#       sshpass -p $srvnewpass scp -P 22 /tmp/12allwebsites.tar.xz root@188.166.54.105:/home/backupm/
+#       sshpass -p $srvnewpass scp -P 22 /tmp/12allwebsites.tar.xz root@1.1.1.1:/home/backupm/
 fi
 # MySQL BD Backup
 if [ ! -f /tmp/12mysqlsrvbackup.sql ]; then
         mysqldump -u root -p"$sqloldpass" --all-databases > /tmp/12mysqlsrvbackup.sql
         tar --xz -cvf /tmp/12mysqlsrvbackup.sql.tar.xz /tmp/12mysqlsrvbackup.sql
-        sshpass -p $srvnewpass scp -P 22 /tmp/12mysqlsrvbackup.sql.tar.xz root@188.166.54.105:/home/backupm/
+        sshpass -p $srvnewpass scp -P 22 /tmp/12mysqlsrvbackup.sql.tar.xz root@1.1.1.1:/home/backupm/
 #else
-#       sshpass -p $srvnewpass scp -P 22 /tmp/12mysqlsrvbackup.sql.tar.xz root@188.166.54.105:/home/backupm/
+#       sshpass -p $srvnewpass scp -P 22 /tmp/12mysqlsrvbackup.sql.tar.xz root@1.1.1.1:/home/backupm/
 fi
 
 # NginX Backup
 if [ ! -f /tmp/12Nginx.tar.xz ]; then
         tar --xz -cvf /tmp/12Nginx.tar.xz /etc/nginx/sites-available/* /etc/nginx/nginx.conf
-        sshpass -p $srvnewpass scp -P 22 /tmp/12Nginx.tar.xz root@188.166.54.105:/home/backupm/
+        sshpass -p $srvnewpass scp -P 22 /tmp/12Nginx.tar.xz root@1.1.1.1:/home/backupm/
 #else
-#        sshpass -p $srvnewpass scp -P 22 /tmp/12Nginx.tar.xz root@188.166.54.105:/home/backupm/
+#        sshpass -p $srvnewpass scp -P 22 /tmp/12Nginx.tar.xz root@1.1.1.1:/home/backupm/
 fi
 
 
