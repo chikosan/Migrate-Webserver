@@ -2,11 +2,10 @@
 #***********************************************************
 #Migrate your wordpress server with Nginx and Mysql server #
 #***********************************************************
-# ver 0.41
+# ver 0.42
 
 main_start () {
 
-echo "Relax we are ready to go in a few sec"
 echo "What is your new server ip, i'm going to update it and install Nginx,mysql,php"
 read srvnewip
 echo "What is your server root password?"
